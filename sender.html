@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 50% 10% 40%;
+        }
+        #plainText, #encryptedText {
+            width: 80%;
+            height: 300px;
+            resize: none;
+        }
+        #encry {
+            margin-top: 150px;
+        }
+   
+    </style>
+</head>
+<body style="background-color: darkolivegreen;">
+<div class="container">
+    <div class="left">
+        <textarea id="plainText"></textarea>
+        
+    </div>
+    <div class="center">
+        <button id="encry" onclick="encrypt()"> => </button>
+    </div>
+    <div class="right">
+        <textarea id="encryptedText"></textarea>
+        
+    </div>
+</div>
+<div class="footer">
+    <button id="send"> Send</button>
+</div>
+<div class="footer">
+    <a href="receiver.html">receiver messages</a>
+</div>
+
+<div class="keyboard">
+    <div class="keyboard">
+      
+      <div class="keyboard__row">
+        
+        <div class="key--double" data-key="49" onclick="handType(1)">
+          <div>!</div>
+          <div>1</div>
+        </div>
+        <div class="key--double" data-key="50" onclick="handType(2)">
+          <div>@</div>
+          <div>2</div>
+        </div>
+        <div class="key--double" data-key="51" onclick="handType(3)">
+          <div>#</div>
+          <div>3</div>
+        </div>
+        <div class="key--double" data-key="52" onclick="handType(4)">
+          <div>$</div>
+          <div>4</div>
+        </div>
+        <div class="key--double" data-key="53" onclick="handType(5)">
+          <div>%</div>
+          <div>5</div>
+        </div>
+        <div class="key--double" data-key="54" onclick="handType(6)">
+          <div>^</div>
+          <div>6</div>
+        </div>
+        <div class="key--double" data-key="55" onclick="handType(7)">
+          <div>&</div>
+          <div>7</div>
+        </div>
+        <div class="key--double" data-key="56" onclick="handType(8)">
+          <div>*</div>
+          <div>8</div>
+        </div>
+        <div class="key--double" data-key="57" onclick="handType(9)">
+          <div>(</div>
+          <div>9</div>
+        </div>
+        <div class="key--double" data-key="48" onclick="handType(0)">
+          <div>)</div>
+          <div>0</div>
+        </div>
+
+      </div>
+      <br />
+      <div class="keyboard__row">
+       
+        
+        <div class="key--double" data-key="55" onclick="handType('q')">
+            <div>₹</div>
+            <div>Q</div>
+          </div>
+          <div class="key--double" data-key="55" onclick="handType('w')">
+            <div>€</div>
+            <div>W</div>
+          </div>
+          <div class="key--double" data-key="55" onclick="handType('e')">
+            <div>ƒ</div>
+            <div>E</div>
+          </div>
+          <div class="key--double" data-key="55" onclick="handType('r')">
+            <div>£</div>
+            <div>R</div>
+          </div>
+          <div class="key--double" data-key="55" onclick="handType('t')">
+            <div>¥</div>
+            <div>T</div>
+          </div>
+          <div class="key--double" data-key="55" onclick="handType('y')">
+            <div>㍐</div>
+            <div>Y</div>
+          </div>
+          <div class="key--double" data-key="55" onclick="handType('u')">
+            <div>֏</div>
+            <div>U</div>
+          </div>
+          <div class="key--double" data-key="55" onclick="handType('i')">
+            <div>؋</div>
+            <div>I</div>
+          </div>
+          <div class="key--double" data-key="55" onclick="handType('o')">
+            <div>૱</div>
+            <div>O</div>
+          </div>
+          <div class="key--double" data-key="55" onclick="handType('p')">
+            <div>₠</div>
+            <div>P</div>
+          </div>
+        
+      </div>
+      <br/>
+      <div class="keyboard__row">
+
+        <div class="key--double" data-key="55" onclick="handType('a')">
+            <div>₡</div>
+            <div>A</div>
+          </div>
+          <div class="key--double" data-key="55" onclick="handType('s')">
+            <div>₢</div>
+            <div>S</div>
+          </div>
+          <div class="key--double" data-key="55" onclick="handType('d')">
+            <div>₣</div>
+            <div>D</div>
+          </div>
+          <div class="key--double" data-key="55" onclick="handType('f')">
+            <div>₥</div>
+            <div>F</div>
+          </div>
+          <div class="key--double" data-key="55" onclick="handType('g')">
+            <div>₦</div>
+            <div>G</div>
+          </div>
+          <div class="key--double" data-key="55" onclick="handType('h')">
+            <div>₧</div>
+            <div>H</div>
+          </div>
+          <div class="key--double" data-key="55" onclick="handType('j')">
+            <div>₩</div>
+            <div>J</div>
+          </div>
+          <div class="key--double" data-key="55" onclick="handType('k')">
+            <div>₪</div>
+            <div>K</div>
+          </div>
+          <div class="key--double" data-key="55" onclick="handType('l')">
+            <div>₭</div>
+            <div>L</div>
+          </div>
+        
+      </div>
+      <br/>
+      <div class="keyboard__row">
+       
+        <div class="key--double" data-key="55" onclick="handType('z')">
+            <div>₮</div>
+            <div>Z</div>
+          </div>
+          <div class="key--double" data-key="55" onclick="handType('x')">
+            <div>₯</div>
+            <div>X</div>
+          </div>
+          <div class="key--double" data-key="55" onclick="handType('c')">
+            <div>₰</div>
+            <div>C</div>
+          </div>
+          <div class="key--double" data-key="55" onclick="handType('v')">
+            <div>₱</div>
+            <div>V</div>
+          </div>
+          <div class="key--double" data-key="55" onclick="handType('b')">
+            <div>₲</div>
+            <div>B</div>
+          </div>
+          <div class="key--double" data-key="55" onclick="handType('n')">
+            <div>₳</div>
+            <div>N</div>
+          </div>
+          <div class="key--double" data-key="55" onclick="handType('m')">
+            <div>₴</div>
+            <div>M</div>
+          </div>
+      </div>
+     
+
+
+
+
+
+    </div>
+</div>
+</body>
+
+<script>
+    
+    function handType(key){
+        var textArea = document.getElementById("plainText").value;
+        // textArea.value=textArea+key;
+        console.log(textArea+key);
+        document.getElementById('plainText').value = textArea+key;
+    }
+
+
+
+</script>
+<script src="script.js"></script>
+</html>
